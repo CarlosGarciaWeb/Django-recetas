@@ -2,7 +2,34 @@
 
 
 {% block content %}
+<div>
+    <h1>Bienvenido a Recetas Amateur!</h1>
+</div>
 
-    <h1>Hello world!</h1>
+<div class="container">
+    <div class="row row-cols-3">
+        <div class="col-6 col-md-4">
+            <h2><a href="{% url 'my_app:italiana' %}">Recetas Italianas</a></h2>
+            <!-- Make list of italian recipes -->
+            <li>
+
+            </li>
+        </div>
+        <div class="col-6 col-md-4">
+            <h2><a href="{% url 'my_app:mar' %}">Recetas de Mar</a></h2>
+            <!-- Make list of seafood recipes -->
+            <li>
+
+            </li>
+        </div>
+        <div class="col-6 col-md-4">
+            <h2><a href="{% url 'my_app:colombiana' %}">Recetas Colombianas</a></h2>
+            <!-- Make list of colombian recipes -->
+            <li>
+                
+            </li>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
