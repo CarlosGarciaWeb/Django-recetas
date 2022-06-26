@@ -1,10 +1,67 @@
+from xml.etree.ElementInclude import include
 from django import forms
+from .models import RecetasColombianas, RecetasItalianas, RecetasMar
+from django.forms import ModelForm
+from datetime import date
 
 
-class RecetaForm(forms.Form):
-    receta = forms.CharField(label='Nombre de la Receta:', max_length=30)
-    tiempo = forms.IntegerField(label='Tiempo total de cocina (en minutos):', min_value=15, max_value=60)
-    ingredientes = forms.CharField(label='Ingredientes (separados por coma):')
-    autor = forms.CharField(label='Autor:')
-    dificultad = forms.IntegerField(label='Dificultas (Numeros enteros del 1 al 5):', max_value=5, min_value=1)
+today = date.today()
+
+class RecetaItalianaForm(ModelForm):
+
+    fecha_agregada = forms.DateField(widget=forms.HiddenInput(), initial=today, label='')
+    
+    class Meta:
+        
+        model = RecetasItalianas
+        fields = '__all__'
+        labels = {
+            'nombre_plato': 'Nombre de la receta',
+            'tiempo_cocina': 'Tiempo para cocinar (ingresar numeros enteros)',
+            'ingredientes': 'Ingredientes (separar por coma)',
+            'autor': 'Autor (escribe tu nombre)',
+            'dificultad': 'Dificultad (ingresar numeros enteros)',
+            'fecha_agregada': None,
+        }
+
+
+
+
+class RecetaMarForm(ModelForm):
+
+    fecha_agregada = forms.DateField(widget=forms.HiddenInput(), initial=today, label='')
+
+    class Meta:
+        
+        model = RecetasMar
+        fields = '__all__'
+        labels = {
+            'nombre_plato': 'Nombre de la receta',
+            'tiempo_cocina': 'Tiempo para cocinar (ingresar numeros enteros)',
+            'ingredientes': 'Ingredientes (separar por coma)',
+            'autor': 'Autor (escribe tu nombre)',
+            'dificultad': 'Dificultad (ingresar numeros enteros)',
+            'fecha_agregada': None,
+        }
+
+
+
+
+
+class RecetaColombianaForm(ModelForm):
+
+    fecha_agregada = forms.DateField(widget=forms.HiddenInput(), initial=today, label='')
+
+    class Meta:
+        
+        model = RecetasColombianas
+        fields = '__all__'
+        labels = {
+            'nombre_plato': 'Nombre de la receta',
+            'tiempo_cocina': 'Tiempo para cocinar (ingresar numeros enteros)',
+            'ingredientes': 'Ingredientes (separar por coma)',
+            'autor': 'Autor (escribe tu nombre)',
+            'dificultad': 'Dificultad (ingresar numeros enteros)',
+            'fecha_agregada': None,
+        }
 
