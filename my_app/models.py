@@ -4,7 +4,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 class RecetasItalianas(models.Model):
     nombre_plato = models.CharField(max_length=30, unique=True, null=False)
-    tiempo_cocina = models.IntegerField(unique=False, null=False, validators=[MinValueValidator(15), MaxValueValidator(1440)])
+    tiempo_cocina = models.IntegerField(unique=False, null=False, validators=[MinValueValidator(15), MaxValueValidator(60)])
     ingredientes = models.CharField(max_length=100 ,unique=False, null=False)
     autor = models.CharField(max_length=30, unique=False, null=False)
     dificultad = models.IntegerField(unique=False, null=False, validators=[MinValueValidator(1), MaxValueValidator(5)])
@@ -19,7 +19,7 @@ class RecetasItalianas(models.Model):
 
 class RecetasMar(models.Model):
     nombre_plato = models.CharField(max_length=30, unique=True, null=False)
-    tiempo_cocina = models.IntegerField(unique=False, null=False, validators=[MinValueValidator(15), MaxValueValidator(1440)])
+    tiempo_cocina = models.IntegerField(unique=False, null=False, validators=[MinValueValidator(15), MaxValueValidator(60)])
     ingredientes = models.CharField(max_length=100 ,unique=False, null=False)
     autor = models.CharField(max_length=30, unique=False, null=False)
     dificultad = models.IntegerField(unique=False, null=False, validators=[MinValueValidator(1), MaxValueValidator(5)])
@@ -33,7 +33,7 @@ class RecetasMar(models.Model):
 
 class RecetasColombianas(models.Model):
     nombre_plato = models.CharField(max_length=30, unique=True, null=False)
-    tiempo_cocina = models.IntegerField(unique=False, null=False, validators=[MinValueValidator(15), MaxValueValidator(1440)])
+    tiempo_cocina = models.IntegerField(unique=False, null=False, validators=[MinValueValidator(15), MaxValueValidator(60)])
     ingredientes = models.CharField(max_length=100 ,unique=False, null=False)
     autor = models.CharField(max_length=30, unique=False, null=False)
     dificultad = models.IntegerField(unique=False, null=False, validators=[MinValueValidator(1), MaxValueValidator(5)])

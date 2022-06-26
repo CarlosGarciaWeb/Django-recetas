@@ -1,3 +1,4 @@
+import re
 from django.shortcuts import render
 from requests import patch
 from . import models
@@ -26,24 +27,17 @@ def home(request):
 
 
 def italiana(request):
-    recetas_italianas = models.RecetasItalianas.objects.all()
-    context = {
-        'italianas': recetas_italianas
-    }
-    return render(request, f'{path_template}{templates_my_app[1]}', context=context)
+    # Test POST
+    if request.POST:
+        print(request.POST)
+    return render(request, f'{path_template}{templates_my_app[1]}', context=None)
 
 
 def mar(request):
-    recetas_mar = models.RecetasMar.objects.all()
-    context = {
-        'mar': recetas_mar
-    }
-    return render(request, f'{path_template}{templates_my_app[2]}', context=context)
+
+    return render(request, f'{path_template}{templates_my_app[2]}', context=None)
 
 
 def colombiana(request):
-    recetas_colombianas = models.RecetasColombianas.objects.all()
-    context = {
-        'colombianas': recetas_colombianas
-    }
-    return render(request, f'{path_template}{templates_my_app[3]}', context=context)
+
+    return render(request, f'{path_template}{templates_my_app[3]}', context=None)
