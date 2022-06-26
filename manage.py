@@ -3,6 +3,7 @@
 import os
 import sys
 
+# print('Perfecto, pero no puedes ver donde estoy seleccionando, cierto?')
 
 def main():
     """Run administrative tasks."""
