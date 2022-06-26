@@ -2,8 +2,9 @@
 
 
 {% block content %}
-
+<div class="forms">
 <h1>Agregar Receta | Italianas</h1>
+
 <div class="container">
     <form action="" method="POST">
         {% csrf_token %}
@@ -13,10 +14,10 @@
         </div>
         {% endfor %}
         <br>
-        <input class='btn btn-primary'type="submit">
+        <input class='btn btn-primary' type="submit">
     </form>
     <br>
 </div>
-
+</div>
 
 {% endblock %}
