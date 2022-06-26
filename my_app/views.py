@@ -31,8 +31,8 @@ def home(request):
 def italiana(request):
     # Test POST
     if request.method == 'POST':
-        if request.POST.get('nombre_plato'):
-            busqueda = request.POST['nombre_plato']
+        if request.POST.get('nombre_receta'):
+            busqueda = request.POST['nombre_receta']
             forms = RecetaItalianaForm()
             recetas = models.RecetasItalianas.objects.filter(nombre_plato__contains=busqueda)
             resultados = len(recetas)
@@ -49,8 +49,8 @@ def italiana(request):
 
 def mar(request):
     if request.method == 'POST':
-        if request.POST.get('nombre_plato'):
-            busqueda = request.POST['nombre_plato']
+        if request.POST.get('nombre_receta'):
+            busqueda = request.POST['nombre_receta']
             forms = RecetaMarForm()
             recetas = models.RecetasMar.objects.filter(nombre_plato__contains=busqueda)
             resultados = len(recetas)
@@ -67,8 +67,8 @@ def mar(request):
 
 def colombiana(request):
     if request.method == 'POST':
-        if request.POST.get('nombre_plato'):
-            busqueda = request.POST['nombre_plato']
+        if request.POST.get('nombre_receta'):
+            busqueda = request.POST['nombre_receta']
             forms = RecetaColombianaForm()
             recetas = models.RecetasColombianas.objects.filter(nombre_plato__contains=busqueda)
             resultados = len(recetas)
