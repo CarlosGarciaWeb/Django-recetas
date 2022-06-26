@@ -7,6 +7,10 @@ from datetime import date
 
 today = date.today()
 
+
+class BuscarForm(forms.Form):
+    nombre_plato = forms.CharField(label='Nombre de Receta')
+
 class RecetaItalianaForm(ModelForm):
 
     fecha_agregada = forms.DateField(widget=forms.HiddenInput(), initial=today, label='')

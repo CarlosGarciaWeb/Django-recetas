@@ -18,5 +18,61 @@
     <br>
 </div>
 </div>
-    {% endblock %}
+
+<hr>
+<h2>Buscar Receta</h2>
+<div class="container">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="form-group row">
+            <input type="text" placeholder="Nombre de la receta: " name="nombre_plato">
+        </div>
+        <br>
+            <input class="btn btn-primary" type="submit" value="Buscar">
+    </form>
+</div>
+<br>
+
+{% if resultado != 0 %}
+<h3> Has buscado {{receta_buscada}}</h3>
+    {% for resultado in busqueda %}
+
+    <div class="container">
+        <h3>{{resultado.nombre_plato}}</h3>
+        <ul>
+                <li>Agregada por {{resultado.autor}}</li>
+    
+                <li>Duracion de preparacion: {{ resultado.tiempo_cocina }} minutos</li>
+    
+    
+            <li>Dificultad: {% if resultado.dificultad == 1 %}
+                💪
+                {% elif resultado.dificultad == 2 %}
+                💪 💪
+                {% elif resultado.dificultad == 3 %}
+                💪 💪 💪
+                {% elif resultado.dificultad == 4 %}
+                💪 💪 💪 💪
+                {% elif resultado.dificultad == 5 %}
+                💪 💪 💪 💪 💪
+                {% endif %}
+            </li>
+            <li>{{resultado.ingredientes|title}}</li>
+            <li>{{resultado.fecha_agregada}}</li></div> <br>
+    {% endfor %}
+
+{% elif resultado == 0 %}
+
+<div class="container">
+<h3> Has buscado {{receta_buscada}}</h3>
+
+<p> No existen recetas por {{receta_buscada}}</p>
+</div>
+
+{% else %}
+
+
+{% endif %}
+
+{% endblock %}
 
