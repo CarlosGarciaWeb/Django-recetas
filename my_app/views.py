@@ -1,4 +1,3 @@
-import re
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from requests import patch
