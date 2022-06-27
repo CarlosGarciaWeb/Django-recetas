@@ -13,7 +13,7 @@
         </div>
         {% endfor %}
         <br>
-        <input class='btn btn-primary'type="submit">
+        <input class='btn btn-primary'type="submit" value="Agregar">
     </form>
     <br>
 </div>
@@ -70,7 +70,34 @@
 </div>
 
 {% else %}
+<hr>
+<div class="container">
+{% for receta in colombianas %}
 
+<h3>{{receta.nombre_plato}}</h3>
+<ul>
+    <li>Agregada por {{receta.autor}}</li>
+
+    <li>Duracion de preparacion: {{ receta.tiempo_cocina }} minutos</li>
+
+
+    <li>Dificultad: {% if receta.dificultad == 1 %}
+        💪
+        {% elif receta.dificultad == 2 %}
+        💪 💪
+        {% elif receta.dificultad == 3 %}
+        💪 💪 💪
+        {% elif receta.dificultad == 4 %}
+        💪 💪 💪 💪
+        {% elif receta.dificultad == 5 %}
+        💪 💪 💪 💪 💪
+        {% endif %}
+    </li>
+    <li>{{receta.ingredientes|title}}</li>
+    <li>{{receta.fecha_agregada}}</li>
+</ul>
+{% endfor %}
+</div>
 
 {% endif %}
 

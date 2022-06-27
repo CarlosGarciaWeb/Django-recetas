@@ -3,100 +3,102 @@
 
 {% block content %}
 <div class="home">
-<div>
-    <h1>Bienvenido a Recetas Amateur!</h1>
-</div>
+    <div>
+        <h1>Bienvenido a Recetas Amateur!</h1>
+    </div>
 
-<div class="container">
-    <div class="row row-cols-3">
-        <div class="col-6 col-md-4">
-            <h2><a href="{% url 'my_app:italiana' %}">Recetas Italianas</a></h2>
-            <!-- Make list of italian recipes -->
-            {% for receta in italianas %}
+    <div class="container">
+        <div class="row row-cols-3">
+            <div class="col-6 col-md-4">
+                <h2><a href="{% url 'my_app:italiana' %}">Recetas Italianas</a></h2>
+                <!-- Make list of italian recipes -->
+                {% for receta in italianas %}
 
-            <h3>{{receta.nombre_plato}}</h3>
-            <ul>
+                <h3>{{receta.nombre_plato}}</h3>
+                <ul>
                     <li>Agregada por {{receta.autor}}</li>
 
                     <li>Duracion de preparacion: {{ receta.tiempo_cocina }} minutos</li>
 
 
-                <li>Dificultad: {% if receta.dificultad == 1 %}
-                    💪
-                    {% elif receta.dificultad == 2 %}
-                    💪 💪
-                    {% elif receta.dificultad == 3 %}
-                    💪 💪 💪
-                    {% elif receta.dificultad == 4 %}
-                    💪 💪 💪 💪
-                    {% elif receta.dificultad == 5 %}
-                    💪 💪 💪 💪 💪
-                    {% endif %}
-                </li>
-                <li>{{receta.ingredientes|title}}</li>
-                <li>{{receta.fecha_agregada}}</li>
-            </ul>
-            {% endfor %}
-        </div>
-        <div class="col-6 col-md-4">
-            <h2><a href="{% url 'my_app:mar' %}">Recetas de Mar</a></h2>
-            <!-- Make list of seafood recipes -->
-            {% for receta in mar %}
+                    <li>Dificultad: {% if receta.dificultad == 1 %}
+                        💪
+                        {% elif receta.dificultad == 2 %}
+                        💪 💪
+                        {% elif receta.dificultad == 3 %}
+                        💪 💪 💪
+                        {% elif receta.dificultad == 4 %}
+                        💪 💪 💪 💪
+                        {% elif receta.dificultad == 5 %}
+                        💪 💪 💪 💪 💪
+                        {% endif %}
+                    </li>
+                    <li>{{receta.ingredientes|title}}</li>
+                    <li>{{receta.fecha_agregada}}</li>
+                </ul>
+                {% endfor %}
 
-            <h3>{{receta.nombre_plato}}</h3>
-            <ul>
+
+            </div>
+            <div class="col-6 col-md-4">
+                <h2><a href="{% url 'my_app:mar' %}">Recetas de Mar</a></h2>
+                <!-- Make list of seafood recipes -->
+                {% for receta in mar %}
+
+                <h3>{{receta.nombre_plato}}</h3>
+                <ul>
                     <li>Agregada por {{receta.autor}}</li>
 
                     <li>Duracion de preparacion: {{ receta.tiempo_cocina }} minutos</li>
 
 
-                <li>Dificultad: {% if receta.dificultad == 1 %}
-                    💪
-                    {% elif receta.dificultad == 2 %}
-                    💪 💪
-                    {% elif receta.dificultad == 3 %}
-                    💪 💪 💪
-                    {% elif receta.dificultad == 4 %}
-                    💪 💪 💪 💪
-                    {% elif receta.dificultad == 5 %}
-                    💪 💪 💪 💪 💪
-                    {% endif %}
-                </li>
-                <li>{{receta.ingredientes|title}}</li>
-                <li>{{receta.fecha_agregada}}</li>
-            </ul>
-            {% endfor %}
-        </div>
-        <div class="col-6 col-md-4">
-            <h2><a href="{% url 'my_app:colombiana' %}">Recetas Colombianas</a></h2>
-            <!-- Make list of colombian recipes -->
-            {% for receta in colombianas %}
+                    <li>Dificultad: {% if receta.dificultad == 1 %}
+                        💪
+                        {% elif receta.dificultad == 2 %}
+                        💪 💪
+                        {% elif receta.dificultad == 3 %}
+                        💪 💪 💪
+                        {% elif receta.dificultad == 4 %}
+                        💪 💪 💪 💪
+                        {% elif receta.dificultad == 5 %}
+                        💪 💪 💪 💪 💪
+                        {% endif %}
+                    </li>
+                    <li>{{receta.ingredientes|title}}</li>
+                    <li>{{receta.fecha_agregada}}</li>
+                </ul>
+                {% endfor %}
+            </div>
+            <div class="col-6 col-md-4">
+                <h2><a href="{% url 'my_app:colombiana' %}">Recetas Colombianas</a></h2>
+                <!-- Make list of colombian recipes -->
+                {% for receta in colombianas %}
 
-            <h3>{{receta.nombre_plato}}</h3>
-            <ul>
+                <h3>{{receta.nombre_plato}}</h3>
+                <ul>
                     <li>Agregada por {{receta.autor}}</li>
 
                     <li>Duracion de preparacion: {{ receta.tiempo_cocina }} minutos</li>
 
 
-                <li>Dificultad: {% if receta.dificultad == 1 %}
-                    💪
-                    {% elif receta.dificultad == 2 %}
-                    💪 💪
-                    {% elif receta.dificultad == 3 %}
-                    💪 💪 💪
-                    {% elif receta.dificultad == 4 %}
-                    💪 💪 💪 💪
-                    {% elif receta.dificultad == 5 %}
-                    💪 💪 💪 💪 💪
-                    {% endif %}
-                </li>
-                <li>{{receta.ingredientes|title}}</li>
-                <li>{{receta.fecha_agregada}}</li>
-            </ul>
-            {% endfor %}
+                    <li>Dificultad: {% if receta.dificultad == 1 %}
+                        💪
+                        {% elif receta.dificultad == 2 %}
+                        💪 💪
+                        {% elif receta.dificultad == 3 %}
+                        💪 💪 💪
+                        {% elif receta.dificultad == 4 %}
+                        💪 💪 💪 💪
+                        {% elif receta.dificultad == 5 %}
+                        💪 💪 💪 💪 💪
+                        {% endif %}
+                    </li>
+                    <li>{{receta.ingredientes|title}}</li>
+                    <li>{{receta.fecha_agregada}}</li>
+                </ul>
+                {% endfor %}
+            </div>
         </div>
     </div>
-</div>
 </div>
 {% endblock %}

@@ -21,7 +21,7 @@ class RecetaItalianaForm(ModelForm):
         fields = '__all__'
         labels = {
             'nombre_plato': 'Nombre de la receta',
-            'tiempo_cocina': 'Tiempo para cocinar (ingresar numeros enteros en minutos)',
+            'tiempo_cocina': 'Tiempo para cocinar (ingresar numeros enteros en minutos 15-60)',
             'ingredientes': 'Ingredientes (separar por coma)',
             'autor': 'Autor (escribe tu nombre)',
             'dificultad': 'Dificultad (ingresar numeros enteros del 1-5)',
@@ -41,7 +41,7 @@ class RecetaMarForm(ModelForm):
         fields = '__all__'
         labels = {
             'nombre_plato': 'Nombre de la receta',
-            'tiempo_cocina': 'Tiempo para cocinar (ingresar numeros enteros en minutos)',
+            'tiempo_cocina': 'Tiempo para cocinar (ingresar numeros enteros en minutos 15-60)',
             'ingredientes': 'Ingredientes (separar por coma)',
             'autor': 'Autor (escribe tu nombre)',
             'dificultad': 'Dificultad (ingresar numeros enteros del 1-5)',
@@ -62,7 +62,7 @@ class RecetaColombianaForm(ModelForm):
         fields = '__all__'
         labels = {
             'nombre_plato': 'Nombre de la receta',
-            'tiempo_cocina': 'Tiempo para cocinar (ingresar numeros enteros en minutos)',
+            'tiempo_cocina': 'Tiempo para cocinar (ingresar numeros enteros en minutos 15-60)',
             'ingredientes': 'Ingredientes (separar por coma)',
             'autor': 'Autor (escribe tu nombre)',
             'dificultad': 'Dificultad (ingresar numeros enteros del 1-5)',
