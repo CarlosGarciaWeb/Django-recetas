@@ -87,7 +87,7 @@ def colombiana(request):
             forms = RecetaColombianaForm()
             recetas = models.RecetasColombianas.objects.filter(nombre_plato__contains=busqueda)
             resultados = len(recetas)
-            return render(request, f'{path_template}{templates_my_app[3]}', context={'forms': forms, 'busqueda': recetas, 'resultado': resultados, 'receta_buscata': busqueda, 'colombianas': recetas_colombianas})
+            return render(request, f'{path_template}{templates_my_app[3]}', context={'forms': forms, 'busqueda': recetas, 'resultado': resultados, 'receta_buscada': busqueda, 'colombianas': recetas_colombianas})
         else:
             forms = RecetaColombianaForm(request.POST)
             if forms.is_valid():

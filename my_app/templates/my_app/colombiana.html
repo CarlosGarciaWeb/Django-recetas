@@ -60,11 +60,11 @@
             <li>{{resultado.ingredientes|title}}</li>
             <li>{{resultado.fecha_agregada}}</li></div> <br>
     {% endfor %}
-
+    <div class="container"><p style="color:red; font-size:xx-small">Para volver a ver todos los resultados da click and buscar nuevamente</p></div>
 {% elif resultado == 0 %}
 
 <div class="container">
-<h3> Has buscado {{receta_buscada}}</h3>
+<h3> Has buscado {{receta_buscada}}</h3> <p style="color:red; font-size:xx-small">Para volver a ver todos los resultados da click and buscar nuevamente</p>
 
 <p> No existen recetas por {{receta_buscada}}</p>
 </div>
