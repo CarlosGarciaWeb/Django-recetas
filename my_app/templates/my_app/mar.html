@@ -9,8 +9,8 @@
         {% csrf_token %}
         {% for form in forms %}
         <div class="form-group row">
-            {{ form.label_tag }} {{form}}
-        </div>
+            {{ form.label_tag }} {{form}} {{form.errors}}
+        </div> 
         {% endfor %}
         <br>
         <input class='btn btn-primary'type="submit" value="Agregar">
